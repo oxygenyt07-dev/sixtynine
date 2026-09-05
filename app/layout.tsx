@@ -1,0 +1,3 @@
+import './globals.css';import Nav from '@/components/Nav';import CursorGlow from '@/components/CursorGlow';import type {Metadata} from 'next';
+export const metadata:Metadata={title:'SixtyNine — Gaming Files, Tools & More',description:'A premium gaming file hub, useful tools platform and developer portfolio.'};
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body><CursorGlow/><Nav/><main className="relative z-10">{children}</main><footer className="relative z-10 border-t border-white/5 py-10 text-center text-sm text-zinc-500">© {new Date().getFullYear()} SixtyNine. Built for gamers & creators.</footer></body></html>}

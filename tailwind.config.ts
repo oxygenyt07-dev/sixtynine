@@ -1,0 +1,2 @@
+import type { Config } from 'tailwindcss';
+export default { content: ['./app/**/*.{ts,tsx}','./components/**/*.{ts,tsx}'], theme:{extend:{animation:{'float-slow':'float 7s ease-in-out infinite','pulse-glow':'pulseGlow 2.5s ease-in-out infinite'},keyframes:{float:{'0%,100%':{transform:'translateY(0)'},'50%':{transform:'translateY(-10px)'}},pulseGlow:{'0%,100%':{opacity:.65},'50%':{opacity:1}}}}},plugins:[]} satisfies Config;

@@ -1,0 +1,1 @@
+'use client';import {useEffect,useState} from 'react';export default function CursorGlow(){const [p,setP]=useState({x:-500,y:-500});useEffect(()=>{const f=(e:MouseEvent)=>setP({x:e.clientX,y:e.clientY});window.addEventListener('mousemove',f);return()=>window.removeEventListener('mousemove',f)},[]);return <div className="cursor-glow" style={{left:p.x,top:p.y}}><span/></div>}

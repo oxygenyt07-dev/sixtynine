@@ -1,0 +1,1 @@
+export type FileItem={id:string;name:string;slug:string;description:string|null;category:string;mime_type:string;size_bytes:number;storage_path:string|null;external_url:string|null;thumbnail_url:string|null;tags:string[];version:string|null;downloads:number;created_at:string};
