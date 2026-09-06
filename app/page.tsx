@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { Archive, Ban, Bolt, Camera, Calculator, Code2, Computer, Crosshair, Download, Flame, Gamepad2, History, Laptop, MousePointer2, Network, Package, Palette, Shield, Smartphone, Sparkles, Terminal, Wrench } from 'lucide-react';
+import { Archive, Ban, Bolt, Calculator, Code2, Computer, Crosshair, Download, Flame, Gamepad2, History, Laptop, MousePointer2, Network, Package, Palette, Shield, Smartphone, Sparkles, Terminal, Wrench } from 'lucide-react';
 
 type Device = 'pc' | 'mobile';
 type PcCategory = 'ff' | 'tools';
@@ -66,7 +66,7 @@ const mobile: Item[] = [
 export default function Home() {
   const [introStage, setIntroStage] = useState<'loading' | 'playing' | 'welcome' | 'hub'>('loading');
   const [device, setDevice] = useState<Device | null>(null);
-  const [category, setCategory] = useState<PcCategory>('ff');
+  const [category, setCategory] = useState<PcCategory>('tools');
   const [comingSoon, setComingSoon] = useState(false);
   const introVideoRef = useRef<HTMLVideoElement>(null);
   const introAudioRef = useRef<HTMLAudioElement>(null);
@@ -101,7 +101,7 @@ export default function Home() {
     setIntroStage('hub');
   }
 
-  function chooseDevice(next: Device) { setDevice(next); if (next === 'pc') setCategory('ff'); }
+  function chooseDevice(next: Device) { setDevice(next); if (next === 'pc') setCategory('tools'); }
   function showComingSoon(event: React.MouseEvent) {
     event.stopPropagation();
     setComingSoon(true);
@@ -140,7 +140,7 @@ export default function Home() {
     {comingSoon && <div className="coming-soon-popup" role="status">Coming soon</div>}
     {bursts.map((item) => <span key={item.id} className="click-burst" style={{ left: item.x, top: item.y, background: `radial-gradient(circle, hsl(${item.hue} 85% 70%), transparent 70%)` }} />)}
     <section className="hub-card">
-      <header className="hub-header"><div><h1>✦ SIXTYNINE HUB</h1><p><Bolt className="inline-icon" /> TOOLS · PC · MOBILE · FREE</p></div><div className="social-links"><a href="https://www.instagram.com/is.it.userrrrrrrr" target="_blank" rel="noreferrer" aria-label="Instagram"><Camera /></a><a href="https://discord.gg/t9CTUUBRwU" target="_blank" rel="noreferrer" aria-label="Discord"><Gamepad2 /></a></div></header>
+      <header className="hub-header"><div><h1>✦ SIXTYNINE HUB</h1><p><Bolt className="inline-icon" /> TOOLS · PC · MOBILE · FREE</p></div><div className="social-links"><a href="https://www.instagram.com/is.it.userrrrrrrr" target="_blank" rel="noreferrer" aria-label="Instagram"><img src="https://cdn.simpleicons.org/instagram/ffffff" alt="Instagram" /></a><a href="https://discord.gg/t9CTUUBRwU" target="_blank" rel="noreferrer" aria-label="Discord"><img src="https://cdn.simpleicons.org/discord/ffffff" alt="Discord" /></a></div></header>
       <div className="made-by"><span>♛ <strong>SIXTYNINE</strong> (AKA ARYAN) — PROFESSIONAL GAMER &amp; DEVELOPER</span><span><Code2 className="inline-icon" /> THIS HUB PROVIDES TOOLS FOR PC &amp; MOBILE · FREE DOWNLOADS</span><span><Download className="inline-icon" /> ALL FILES HOSTED ON MEDIAFIRE</span></div>
       <div className="step-container"><p className="step-label">▼ &nbsp; SELECT YOUR DEVICE</p><div className="choice-group"><button className={`choice-btn ${device === 'pc' ? 'active' : ''}`} onClick={() => chooseDevice('pc')}><Laptop /> PC</button><button className={`choice-btn ${device === 'mobile' ? 'active' : ''}`} onClick={() => chooseDevice('mobile')}><Smartphone /> MOBILE</button></div></div>
       {device === 'pc' && <div className="step-container"><p className="step-label faded">→ &nbsp; PC CATEGORY</p><div className="sub-choice"><button className={`sub-btn ${category === 'ff' ? 'active-sub' : ''}`} onClick={() => setCategory('ff')}><Flame /> FREE FIRE</button><button className={`sub-btn ${category === 'tools' ? 'active-sub' : ''}`} onClick={() => setCategory('tools')}><Wrench /> PC TOOLS</button></div></div>}

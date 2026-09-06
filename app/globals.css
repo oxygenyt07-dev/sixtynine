@@ -39,6 +39,7 @@ button, a { transition: all .2s ease; }
 .inline-icon { width: 1.15em; height: 1.15em; display: inline; vertical-align: -.15em; color: #ffb347; }
 .social-links { display: flex; gap: 2rem; padding: .5rem 2rem; border: 1px solid rgba(255, 215, 0, .15); border-radius: 60px; background: rgba(255, 255, 255, .04); }
 .social-links a { color: #e8edff; display: flex; transition: .25s ease; }
+.social-links img { width: 1.35rem; height: 1.35rem; object-fit: contain; }
 .social-links a:hover { color: #ffd966; transform: scale(1.18) rotate(2deg); }
 .made-by { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem 1.8rem; margin: .8rem 0 1.8rem; padding: .9rem 1.8rem; border: 1px solid rgba(255, 215, 0, .08); border-left: 6px solid #ffb347; border-radius: 60px; background: rgba(255, 215, 0, .04); color: #eef3ff; font-size: 1.05rem; }
 .made-by strong { color: #ffd966; }
